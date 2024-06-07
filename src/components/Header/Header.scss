@@ -1,0 +1,14 @@
+.header {
+    &__logo {
+        height: 1.5625rem;
+        width: 7.5rem;
+    }
+
+    &__avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        object-fit: cover;
+        border-radius: 50%;
+        object-position: left;
+    }
+}
