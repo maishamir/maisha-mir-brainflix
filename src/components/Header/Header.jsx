@@ -1,5 +1,4 @@
 import "./Header.scss";
-import Button from "../Button/Button";
 
 function Header() {
   return (
@@ -24,7 +23,6 @@ function Header() {
             alt="user avatar image"
             className="header__avatar"
           />
-          {/* <Button buttonText='UPLOAD' className="header__upload-button"/> */}
           <button className="header__button">UPLOAD</button>
         </div>
       </header>
