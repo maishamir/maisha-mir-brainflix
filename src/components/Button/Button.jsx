@@ -1,9 +1,11 @@
-import './Button.scss'
+import "./Button.scss";
 
-function Button({buttonText, icon}) {
+function Button({ buttonText}) {
   return (
-      <button className='button'><img src={icon} alt="" className='button__icon'/> {buttonText}</button>
-  )
+    <button className="button">
+      <p className="button__text">{buttonText}</p>
+    </button>
+  );
 }
 
-export default Button
+export default Button;
