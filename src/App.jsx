@@ -10,25 +10,23 @@ function App() {
   const [currVideo, setCurrVideo] = useState(videoData[0])
 
   // set the initial state of the video list (to be rendered in the sidebar), to the entire videoData minus the currentVideo
-  let currentVideoData = videoData.filter(video => video.id != currVideo.id)
+  const currentVideoData = videoData.filter(video => video.id != currVideo.id)
 
   const [videoList, setVideoList] = useState(currentVideoData)
 
-  function handleVideoClick() {
+  function changeVideo(video) {
     //call setVideoList here
+    setCurrVideo(video)
+    const newVideoData = videoData.filter(v =>v.id !== video.id )
     //maybe also call setCurrVideo here
+    setVideoList(newVideoData)
   }
 
   return (
     <>
       <Header />
       <MainSection currentVideo={currVideo} />
-
-      {/* pass in a function that gets called in onClick on each video component */}
-      {/* update the videoList so that all videos except for the video with the id that was clicked is not in the list */}
-      {/* this function will also call the setCurrVideo state function and set the clicked video to be the current video */}
-      {/* easyyy peasyyy */}
-      <Sidebar videos={videoList} />
+      <Sidebar videos={videoList} changeVideo={changeVideo} />
     </>
   );
 }
