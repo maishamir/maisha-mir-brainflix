@@ -1,13 +1,13 @@
 import "./MainSection.scss";
-import VideoSection from "../VideoSection/VideoSection"
-import CommentSection from "../CommentSection/CommentSection"
+import VideoSection from "../VideoSection/VideoSection";
+import CommentSection from "../CommentSection/CommentSection";
 
-function MainSection() {
+function MainSection({ currentVideo }) {
+  // console.log("Main section=> ", currentVideo);
   return (
     <main>
-          <h1>MainSection</h1>
-          <VideoSection />
-          <CommentSection />
+      <VideoSection currentVideo={currentVideo} />
+      <CommentSection />
     </main>
   );
 }

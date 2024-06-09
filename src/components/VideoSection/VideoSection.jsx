@@ -3,13 +3,13 @@ import Video from "../Video/Video";
 import VideoInfo from "../VideoInfo/VideoInfo";
 import VideoDescription from "../VideoDescription/VideoDescription";
 
-function VideoSection() {
+function VideoSection({ currentVideo }) {
+  // console.log("VideoSection => ", currentVideo);
   return (
     <div>
-      <h1>VideoSection</h1>
-      <Video />
-      <VideoInfo />
-      <VideoDescription/>
+      <Video currentVideo={ currentVideo} />
+      <VideoInfo currentVideo={currentVideo} />
+      <VideoDescription currentVideo={currentVideo} />
     </div>
   )
 }
