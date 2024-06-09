@@ -1,7 +1,7 @@
 import "./Video.scss"
 
 function Video({currentVideo}) {
-  console.log("Video component => ", currentVideo.image )
+  // console.log("Video component => ", currentVideo.image )
   return (
     <div className="video">
       {

@@ -2,8 +2,8 @@ import "./VideoDescription.scss"
 
 function VideoDescription({currentVideo}) {
   return (
-    <div class="video-description">
-      <p class="video-description__text">{currentVideo.description}</p>
+    <div className="video-description">
+      <p className="video-description__text">{currentVideo.description}</p>
     </div>
   )
 }

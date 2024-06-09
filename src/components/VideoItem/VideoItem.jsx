@@ -1,8 +1,15 @@
 import "./VideoItem.scss"
 
-function VideoItem() {
+function VideoItem({ video}) {
   return (
-    <div>VideoItem</div>
+    <div className="video-item">
+      <img src={video.image} alt="" className="video-item__thumbnail" />
+      <div className="video-item__details">
+        <p className="video-item__title">{ video.title}</p>
+        <p className="video-item__channel">{ video.channel}</p>
+      </div>
+    </div>
+    // <h3>VideoItem</h3>
   )
 }
 

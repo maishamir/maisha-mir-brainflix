@@ -3,7 +3,7 @@ import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
 
 function CommentSection({ comments }) {
-  console.log(comments);
+  // console.log(comments);
   return (
     <>
       <p><strong>{ comments.length} Comments</strong></p>

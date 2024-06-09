@@ -1,12 +1,12 @@
 import "./Sidebar.scss";
 import VideoList from "../VideoList/VideoList";
 
-function SideBar() {
+function SideBar({ videos}) {
   return (
     <>
       <aside>
-        <h1>Sidebar</h1>
-        <VideoList />
+        <h2>NEXT VIDEOS</h2>
+        <VideoList videos={videos} />
       </aside>
     </>
   );

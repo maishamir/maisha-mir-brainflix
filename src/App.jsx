@@ -9,8 +9,16 @@ function App() {
 
   const [currVideo, setCurrVideo] = useState(videoData[0])
 
+  // set the initial state of the video list (to be rendered in the sidebar), to the entire videoData minus the currentVideo
+  let currentVideoData = videoData.filter(video => video.id != currVideo.id)
 
-  // console.log(currVideo)
+  const [videoList, setVideoList] = useState(currentVideoData)
+
+  function handleVideoClick() {
+    //call setVideoList here
+    //maybe also call setCurrVideo here
+  }
+
   return (
     <>
       <Header />
@@ -20,7 +28,7 @@ function App() {
       {/* update the videoList so that all videos except for the video with the id that was clicked is not in the list */}
       {/* this function will also call the setCurrVideo state function and set the clicked video to be the current video */}
       {/* easyyy peasyyy */}
-      <Sidebar />
+      <Sidebar videos={videoList} />
     </>
   );
 }

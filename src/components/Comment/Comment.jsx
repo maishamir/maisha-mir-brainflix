@@ -1,10 +1,10 @@
 import "./Comment.scss";
 
 function Comment({ commentObj }) {
-  console.log("Current comment => ", commentObj);
+  // console.log("Current comment => ", commentObj);
   return (
     <>
-      <div className="comment">
+      <div className="comment" >
         <div className="comment__avatar"></div>
         <div className="comment__stats">
           <p className="comment__author">{commentObj.name}</p>
