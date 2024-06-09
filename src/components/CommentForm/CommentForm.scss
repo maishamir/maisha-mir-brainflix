@@ -1,0 +1,26 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/globals";
+
+
+.comment-form {
+    display: flex;
+    justify-content: space-between;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: left;
+  }
+
+  &__button {
+    width: 100%;
+    background: url(../../assets/icons/add_comment.svg) no-repeat scroll 0.5rem 0.5rem;
+    background-color: $brainflix-blue;
+  }
+}

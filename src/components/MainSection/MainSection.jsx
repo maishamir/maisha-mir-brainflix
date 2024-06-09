@@ -7,7 +7,7 @@ function MainSection({ currentVideo }) {
   return (
     <main>
       <VideoSection currentVideo={currentVideo} />
-      <CommentSection />
+      <CommentSection comments={currentVideo.comments} />
     </main>
   );
 }

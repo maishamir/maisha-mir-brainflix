@@ -2,14 +2,13 @@ import "./CommentSection.scss";
 import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
 
-function CommentSection() {
+function CommentSection({ comments }) {
+  console.log(comments);
   return (
     <>
-      <div>
-        <h1>CommentSection</h1>
-      </div>
+      <p><strong>{ comments.length} Comments</strong></p>
       <CommentForm />
-      <CommentList />
+      <CommentList comments={comments } />
     </>
   );
 }

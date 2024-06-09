@@ -1,8 +1,11 @@
-import "./CommentList.scss"
+import "./CommentList.scss";
+import Comment from "../Comment/Comment";
 
-function CommentList() {
+function CommentList({ comments }) {
   return (
-    <div>CommentList</div>
+    comments.map(comment => {
+      return <Comment commentObj={ comment} />
+    })
   )
 }
 
