@@ -98,6 +98,11 @@ textarea {
   gap: 1rem;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .comment-form {
+    padding: 1.5rem;
+  }
+}
 .comment-form__header {
   font-weight: 600;
 }

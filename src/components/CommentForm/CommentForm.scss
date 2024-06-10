@@ -6,6 +6,10 @@
   gap: 1rem;
   width: 100%;
 
+  @include tablet {
+    padding: 1.5rem;
+  }
+
   
 
   &__header {
