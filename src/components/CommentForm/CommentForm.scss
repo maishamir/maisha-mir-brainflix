@@ -3,17 +3,16 @@
 
 .comment-form {
   padding: 1rem;
-  gap: 1rem;
+
   width: 100%;
 
   @include tablet {
     padding: 1.5rem;
   }
 
-  
-
   &__header {
     font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   &__input-group {
