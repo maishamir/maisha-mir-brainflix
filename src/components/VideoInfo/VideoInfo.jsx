@@ -4,16 +4,20 @@ function VideoInfo({ currentVideo }) {
   return (
     <div className="video-info">
       <h1 className="video-info__title">{currentVideo.title}</h1>
-      <hr/>
-      <div className="video-info__meta">
+      <hr className="video-info__divider" />
+      
+      <div class="video-info__container">
+        <div className="video-info__meta">
         <p className="video-info__channel">By {currentVideo.channel}</p>
         <p className="video-info__date">{new Date(currentVideo.timestamp).toLocaleDateString()}</p>
       </div>
       <div className="video-info__stats">
-        <p className="video-info__views">{currentVideo.views}</p>
-        <p className="video-info__likes">{currentVideo.likes}</p>
+        <p className="video-info__views"><img src="src/assets/icons/views.svg" alt="" class="video-info__logo"/> {currentVideo.views}</p>
+        <p className="video-info__likes"><img src="src/assets/icons/likes.svg" alt="" class="video-info__logo"/> {currentVideo.likes}</p>
       </div>
-      <hr/>
+      </div>
+      
+      <hr className="video-info__divider"/>
     </div>
   );
 }

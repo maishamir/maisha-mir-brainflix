@@ -1,0 +1,62 @@
+@import "../../styles/partials/globals";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.video-info {
+    padding: 1rem;
+    @include tablet {
+        padding: 1.5rem;
+    }
+
+    &__title {
+        padding-bottom: 1rem;
+    }
+
+    &__container {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        color: $silver;
+
+        @include tablet {
+            padding-top: 0;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 2.5rem;
+        }
+    }
+
+    &__stats{
+        @extend .video-info__meta;
+        padding: 0 2rem;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+    &__channel {
+        color: $brainflix-black;
+        font-weight: 600;
+    }
+
+
+    hr {
+        border: none;
+        border-top: 1px solid $mercury;
+
+        @include tablet {
+           &:first-of-type {
+                display: none;
+            }
+        }
+    }
+    
+}
