@@ -6,4 +6,11 @@
   .sidebar__title {
     padding: 1rem 1.5rem 0 1.5rem;
   }
+}
+@media (min-width: 1280px) {
+  .sidebar {
+    border: none;
+    border-left: 1px solid #E1E1E1;
+    width: 35vw;
+  }
 }/*# sourceMappingURL=Sidebar.css.map */

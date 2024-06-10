@@ -5,4 +5,9 @@
   .video-description {
     padding: 0 1.5rem;
   }
+}
+@media (min-width: 1280px) {
+  .video-description {
+    padding: 1rem 0;
+  }
 }/*# sourceMappingURL=VideoDescription.css.map */

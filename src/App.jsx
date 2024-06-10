@@ -11,22 +11,18 @@ function App() {
 
   // set the initial state of the video list (to be rendered in the sidebar), to the entire videoData minus the currentVideo
   const currentVideoData = videoData.filter(video => video.id != currVideo.id)
-
   const [videoList, setVideoList] = useState(currentVideoData)
 
   function changeVideo(video) {
-    //call setVideoList here
     setCurrVideo(video)
     const newVideoData = videoData.filter(v =>v.id !== video.id )
-    //maybe also call setCurrVideo here
     setVideoList(newVideoData)
   }
 
   return (
     <>
       <Header />
-      <MainSection currentVideo={currVideo} />
-      <Sidebar videos={videoList} changeVideo={changeVideo} />
+      <MainSection currentVideo={currVideo} videos={videoList} changeVideo={changeVideo}/>
     </>
   );
 }

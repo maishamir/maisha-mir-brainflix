@@ -5,7 +5,7 @@ function CommentForm({ comments }) {
     <>
       <div className="comment-form">
         <p className="comment-form__header">{comments.length} Comments</p>
-        <div class="comment-form__input-group">
+        <div className="comment-form__input-group">
           <img
             src="src/assets/images/Mohan-muruge.jpg"
             alt=""

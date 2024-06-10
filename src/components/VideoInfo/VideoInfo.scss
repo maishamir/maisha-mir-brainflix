@@ -8,6 +8,10 @@
         padding: 1.5rem;
     }
 
+    @include desktop {
+        padding: 1.5rem 0 0 0;
+    }
+
     &__title {
         padding-bottom: 1rem;
     }
@@ -40,6 +44,10 @@
 
         @include tablet {
             padding: 0;
+        }
+
+        @include desktop {
+            padding: 0 1rem;
         }
     }
     &__channel {

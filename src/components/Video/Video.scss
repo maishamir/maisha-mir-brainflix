@@ -16,6 +16,10 @@
         @include tablet {
             padding: 0 2.5rem;
         }
+
+        @include desktop {
+            width: 75%;
+        }
     }
     
 }

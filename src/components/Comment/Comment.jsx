@@ -5,7 +5,7 @@ function Comment({ commentObj }) {
     <>
       <div className="comment">
         <div className="comment__avatar"></div>
-        <div class="comment__content">
+        <div className="comment__content">
           <div className="comment__stats">
             <p className="comment__author">{commentObj.name}</p>
             <p className="comment__date">

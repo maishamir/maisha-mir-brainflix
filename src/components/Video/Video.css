@@ -16,4 +16,9 @@
   .video__currentVideo {
     padding: 0 2.5rem;
   }
+}
+@media (min-width: 1280px) {
+  .video__currentVideo {
+    width: 75%;
+  }
 }/*# sourceMappingURL=Video.css.map */

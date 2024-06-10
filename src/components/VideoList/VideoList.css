@@ -5,10 +5,11 @@
 @media (min-width: 768px) {
   .video-list {
     margin-bottom: 2rem;
+    padding: 0 1.5rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .video-list {
-    padding: 0 1.5rem;
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=VideoList.css.map */

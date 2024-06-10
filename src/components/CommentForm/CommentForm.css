@@ -116,6 +116,11 @@ hr {
     margin: 0 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  hr {
+    margin: 0;
+  }
+}
 
 .comment-form {
   padding: 1rem;
@@ -124,6 +129,11 @@ hr {
 @media (min-width: 768px) {
   .comment-form {
     padding: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment-form {
+    padding: 1.5rem 1.5rem 1.5rem 0;
   }
 }
 .comment-form__header {

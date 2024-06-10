@@ -2,11 +2,16 @@
 @import "../../styles/partials/variables";
 
 .sidebar {
-    &__title {
-        color: $silver;
-        padding: 1rem 1rem 0 1rem;
-        @include tablet {
-            padding: 1rem 1.5rem 0 1.5rem;
-        }
+  &__title {
+    color: $silver;
+    padding: 1rem 1rem 0 1rem;
+    @include tablet {
+      padding: 1rem 1.5rem 0 1.5rem;
     }
+  }
+  @include desktop {
+    border: none;
+    border-left: 1px solid $mercury;
+    width: 35vw;
+  }
 }

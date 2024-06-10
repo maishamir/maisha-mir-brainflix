@@ -1,9 +1,8 @@
 import "./Sidebar.scss";
 import VideoList from "../VideoList/VideoList";
 
-function SideBar({ videos, changeVideo }) {
+function Sidebar({ videos, changeVideo }) {
   
-
   return (
     <>
       <aside className="sidebar">
@@ -14,4 +13,4 @@ function SideBar({ videos, changeVideo }) {
   );
 }
 
-export default SideBar;
+export default Sidebar;

@@ -1,1 +1,5 @@
-/*# sourceMappingURL=CommentList.css.map */
+@media (min-width: 1280px) {
+  .comment-list hr:last-of-type {
+    display: none;
+  }
+}/*# sourceMappingURL=CommentList.css.map */

@@ -10,7 +10,6 @@
 
 body,
 ::placeholder {
-  // padding: 1rem;
   font-family: "Avenir Next";
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -85,5 +84,9 @@ hr {
 
     @include tablet {
         margin: 0 1.5rem;
+    }
+
+    @include desktop {
+      margin: 0;
     }
 }

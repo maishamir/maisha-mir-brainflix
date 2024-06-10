@@ -116,6 +116,11 @@ hr {
     margin: 0 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  hr {
+    margin: 0;
+  }
+}
 
 .video-info {
   padding: 1rem;
@@ -123,6 +128,11 @@ hr {
 @media (min-width: 768px) {
   .video-info {
     padding: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .video-info {
+    padding: 1.5rem 0 0 0;
   }
 }
 .video-info__title {
@@ -156,6 +166,11 @@ hr {
 @media (min-width: 768px) {
   .video-info__stats {
     padding: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .video-info__stats {
+    padding: 0 1rem;
   }
 }
 .video-info__channel {

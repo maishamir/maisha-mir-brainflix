@@ -1,0 +1,13 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.comment-list {
+  hr {
+    @include desktop {
+        &:last-of-type {
+            display: none;
+    }
+    }
+    
+  }
+}
