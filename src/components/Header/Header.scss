@@ -8,8 +8,11 @@
   align-items: center;
   gap: 1rem;
 
+  padding: 1rem;
+
   @include tablet {
     flex-direction: row;
+    padding: 1.5rem;
   }
 
   &__content {

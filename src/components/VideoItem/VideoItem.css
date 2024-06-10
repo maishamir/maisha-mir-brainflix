@@ -1,0 +1,9 @@
+.video-item {
+  cursor: pointer;
+}
+.video-item__thumbnail {
+  height: 100px;
+}
+.video-item__title {
+  font-weight: 600;
+}/*# sourceMappingURL=VideoItem.css.map */
