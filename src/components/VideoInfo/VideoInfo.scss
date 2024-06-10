@@ -49,6 +49,7 @@
 
 
     hr {
+        margin: 0;
         @include tablet {
            &:first-of-type {
                 display: none;

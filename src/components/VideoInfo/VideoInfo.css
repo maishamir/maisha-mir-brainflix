@@ -151,6 +151,9 @@ hr {
   color: #323232;
   font-weight: 600;
 }
+.video-info hr {
+  margin: 0;
+}
 @media (min-width: 768px) {
   .video-info hr:first-of-type {
     display: none;
