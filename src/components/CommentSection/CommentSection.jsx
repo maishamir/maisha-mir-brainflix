@@ -6,8 +6,7 @@ function CommentSection({ comments }) {
   // console.log(comments);
   return (
     <>
-      <p><strong>{ comments.length} Comments</strong></p>
-      <CommentForm />
+      <CommentForm comments={ comments} />
       <CommentList comments={comments } />
     </>
   );

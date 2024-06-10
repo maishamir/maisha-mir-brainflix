@@ -1,1 +1,8 @@
-/*# sourceMappingURL=VideoDescription.css.map */
+.video-description {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .video-description {
+    padding: 0 1.5rem;
+  }
+}/*# sourceMappingURL=VideoDescription.css.map */

@@ -1,28 +1,35 @@
 import "./CommentForm.scss";
 
-function CommentForm() {
+function CommentForm({ comments }) {
   return (
     <>
       <div className="comment-form">
-        <img
-          src="src/assets/images/Mohan-muruge.jpg"
-          alt=""
-          className="comment-form__avatar"
-        />
-        <form className="comment-form__form">
-          <label htmlFor="comment-text">JOIN THE CONVERSATION</label>
-          <br />
-          <textarea
-            className="comment-form__comment"
-            type="text"
-            name="comment-text"
-            id="comment-text"
-            placeholder="Add a new component"
+        <p className="comment-form__header">{comments.length} Comments</p>
+        <div class="comment-form__input-group">
+          <img
+            src="src/assets/images/Mohan-muruge.jpg"
+            alt=""
+            className="comment-form__avatar"
           />
-          <button type="submit" className="comment-form__button">
-            COMMENT
-          </button>
-        </form>
+          <form className="comment-form__form">
+            <div className="comment-form__input">
+              <label htmlFor="comment-text" className="comment-form__label">
+                JOIN THE CONVERSATION
+              </label>
+              <br />
+              <textarea
+                className="comment-form__comment"
+                type="text"
+                name="comment-text"
+                id="comment-text"
+                placeholder="Add a new component"
+              />
+            </div>
+            <button type="submit" className="comment-form__button">
+              COMMENT
+            </button>
+          </form>
+        </div>
       </div>
       <hr />
     </>
