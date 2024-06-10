@@ -28,7 +28,8 @@
   line-height: 1.125rem;
 }
 
-body, ::placeholder {
+body,
+::placeholder {
   font-family: "Avenir Next";
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -38,7 +39,8 @@ body, ::placeholder {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
-  body, ::placeholder {
+  body,
+  ::placeholder {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -93,6 +95,17 @@ textarea {
   resize: none;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid #E1E1E1;
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  hr {
+    margin: 0 1.5rem;
+  }
+}
+
 .video-info {
   padding: 1rem;
 }
@@ -137,10 +150,6 @@ textarea {
 .video-info__channel {
   color: #323232;
   font-weight: 600;
-}
-.video-info hr {
-  border: none;
-  border-top: 1px solid #E1E1E1;
 }
 @media (min-width: 768px) {
   .video-info hr:first-of-type {
