@@ -1,5 +1,11 @@
 .video-list {
   padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .video-list {
+    margin-bottom: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .video-list {

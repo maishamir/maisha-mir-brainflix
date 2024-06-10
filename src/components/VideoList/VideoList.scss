@@ -4,6 +4,12 @@
 .video-list {
     padding: 0 1rem;
 
+    margin-bottom: 3rem;
+
+    @include tablet {
+        margin-bottom: 2rem;
+    }
+
     @include tablet {
         padding: 0 1.5rem;
     }
