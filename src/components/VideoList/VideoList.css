@@ -1,1 +1,8 @@
-/*# sourceMappingURL=VideoList.css.map */
+.video-list {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .video-list {
+    padding: 0 1.5rem;
+  }
+}/*# sourceMappingURL=VideoList.css.map */

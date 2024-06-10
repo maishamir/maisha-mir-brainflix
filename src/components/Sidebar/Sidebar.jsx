@@ -6,8 +6,8 @@ function SideBar({ videos, changeVideo }) {
 
   return (
     <>
-      <aside>
-        <h2>NEXT VIDEOS</h2>
+      <aside className="sidebar">
+        <h2 className="sidebar__title">NEXT VIDEOS</h2>
         <VideoList videos={videos} changeVideo={changeVideo} />
       </aside>
     </>
