@@ -14,7 +14,7 @@
         object-fit: cover;
 
         @include tablet {
-            width: 70%;
+            padding: 0 2.5rem;
         }
     }
     
