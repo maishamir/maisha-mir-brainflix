@@ -1,0 +1,9 @@
+@import "../../styles/partials/mixins";
+
+.video-description {
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 1.5rem;
+    }
+}
