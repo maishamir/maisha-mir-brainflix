@@ -29,7 +29,6 @@ function App() {
           <Route path="/videos/:videoId" element={<VideoDetailsPage/>}/>
         </Routes>
       </BrowserRouter>
-      {/* <MainSection currentVideo={currVideo} videos={videoList} changeVideo={changeVideo}/> */}
     </>
   );
 }

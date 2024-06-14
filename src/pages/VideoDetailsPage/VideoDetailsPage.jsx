@@ -7,6 +7,7 @@ import VideoInfo from "../../components/VideoInfo/VideoInfo.jsx";
 import VideoDescription from "../../components/VideoDescription/VideoDescription.jsx";
 import CommentSection from "../../components/CommentSection/CommentSection.jsx";
 import Sidebar from "../../components/Sidebar/Sidebar.jsx";
+import MainSection from "../../components/MainSection/MainSection.jsx";
 
 function VideoDetailsPage() {
   const { videoId } = useParams(); // Retrieve the video ID from the URL parameters
@@ -63,12 +64,8 @@ function VideoDetailsPage() {
   const { title, channel, image, description, comments } = videoDetailsData;
 
   return (
-    <div>
-      <VideoSection currentVideo={videoDetailsData} /> {/* Render the main video section */}
-      <VideoInfo currentVideo={videoDetailsData} /> {/* Render the video information */}
-      <VideoDescription currentVideo={videoDetailsData} /> {/* Render the video description */}
-      <CommentSection comments={comments} /> {/* Render the comments section */}
-      <Sidebar videos={videoList} /> {/* Render the sidebar with other videos */}
+    <div className="video-detailsPage">
+      <MainSection currentVideo={videoDetailsData} videos={videoList } />
     </div>
   );
 }

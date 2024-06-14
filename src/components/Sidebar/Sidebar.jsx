@@ -14,7 +14,7 @@ function Sidebar({ videos }) {
         <div className="sidebar__video-list">
           {videos.map((video) => {
             return (
-              <Link to={`/videos/${video.id}`}>
+              <Link to={`/videos/${video.id}`} key={ video.id}>
                 <VideoItem video={video} />
               </Link>
             );
