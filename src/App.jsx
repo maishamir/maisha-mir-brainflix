@@ -1,7 +1,8 @@
 import "./App.scss";
 import { useState } from "react";
 import Header from "./components/Header/Header";
-import MainSection from "./components/MainSection/MainSection";
+// import MainSection from "./components/MainSection/MainSection";
+import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import videoData from "./data/video-details.json"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -24,7 +25,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-
+          <Route path="/" element={<VideoDetailsPage/>}/>
+          <Route path="/videos/:videoId" element={<VideoDetailsPage/>}/>
         </Routes>
       </BrowserRouter>
       {/* <MainSection currentVideo={currVideo} videos={videoList} changeVideo={changeVideo}/> */}
