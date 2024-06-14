@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import MainSection from "./components/MainSection/MainSection";
 import Sidebar from "./components/Sidebar/Sidebar";
 import videoData from "./data/video-details.json"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
 
@@ -22,7 +23,12 @@ function App() {
   return (
     <>
       <Header />
-      <MainSection currentVideo={currVideo} videos={videoList} changeVideo={changeVideo}/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainSection />}/>
+        </Routes>
+      </BrowserRouter>
+      {/* <MainSection currentVideo={currVideo} videos={videoList} changeVideo={changeVideo}/> */}
     </>
   );
 }

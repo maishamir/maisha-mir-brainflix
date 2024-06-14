@@ -3,7 +3,7 @@ import Comment from "../Comment/Comment";
 
 function CommentList({ comments }) {
   return (
-    <div class="comment-list">
+    <div className="comment-list">
       {comments.map((comment) => {
         return <Comment commentObj={comment} key={comment.id} />;
       })}

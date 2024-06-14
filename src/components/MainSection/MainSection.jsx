@@ -8,11 +8,12 @@ import VideoDescription from "../VideoDescription/VideoDescription";
 function MainSection({ currentVideo, videos, changeVideo }) {
   return (
     <main className="main-section">
-      <div className="main-section__video">
+      <h1>MainSection</h1>
+      {/* <div className="main-section__video">
         <VideoSection currentVideo={currentVideo} />
       </div>
-      <div class="main-section__vid-sidebar">
-        <div class="main-section__video-info">
+      <div className="main-section__vid-sidebar">
+        <div className="main-section__video-info">
           <VideoInfo currentVideo={currentVideo} />
           <VideoDescription currentVideo={currentVideo} />
           <CommentSection comments={currentVideo.comments} />
@@ -20,7 +21,7 @@ function MainSection({ currentVideo, videos, changeVideo }) {
         <div className="main-section__sidebar">
           <Sidebar videos={videos} changeVideo={changeVideo} />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
