@@ -1,4 +1,5 @@
 import "./CommentForm.scss";
+import avatar from "../../assets/images/Mohan-muruge.jpg"
 
 function CommentForm({ comments }) {
   return (
@@ -7,7 +8,7 @@ function CommentForm({ comments }) {
         <p className="comment-form__header">{comments.length} Comments</p>
         <div className="comment-form__input-group">
           <img
-            src="src/assets/images/Mohan-muruge.jpg"
+            src={avatar}
             alt=""
             className="comment-form__avatar"
           />

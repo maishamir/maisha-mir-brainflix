@@ -1,11 +1,13 @@
 import "./Header.scss";
+import logo from "../../assets/logo/BrainFlix-logo.svg"
+import avatar from "../../assets/images/Mohan-muruge.jpg"
 
 function Header() {
   return (
     <>
       <header className="header">
         <img
-          src="src/assets/logo/BrainFlix-logo.svg"
+          src={logo}
           alt="brainflix logo"
           className="header__logo"
         />
@@ -19,7 +21,7 @@ function Header() {
             className="header__search-bar"
           />
           <img
-            src="src/assets/images/Mohan-muruge.jpg"
+            src={avatar}
             alt="user avatar image"
             className="header__avatar"
           />

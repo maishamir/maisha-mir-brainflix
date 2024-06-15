@@ -4,7 +4,7 @@ import axios from "axios";
 import API_URL, { API_KEY } from "../../utils.js";
 
 import VideoItem from "../VideoItem/VideoItem";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 function Sidebar({ videos }) {
   return (
@@ -14,7 +14,7 @@ function Sidebar({ videos }) {
         <div className="sidebar__video-list">
           {videos.map((video) => {
             return (
-              <Link to={`/videos/${video.id}`} key={ video.id}>
+              <Link to={`/videos/${video.id}`} key={ video.id} className="sidebar__link">
                 <VideoItem video={video} />
               </Link>
             );
