@@ -68,6 +68,11 @@
     }
   }
 
+  &__link {
+    display: block;
+    border: 1px dashed green;
+  }
+
   &__button {
     width: 100%;
     background: url(../../assets/icons/upload.svg) no-repeat scroll 0.5rem 0.5rem;

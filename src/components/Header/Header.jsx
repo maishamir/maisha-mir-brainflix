@@ -1,16 +1,15 @@
 import "./Header.scss";
-import logo from "../../assets/logo/BrainFlix-logo.svg"
-import avatar from "../../assets/images/Mohan-muruge.jpg"
+import logo from "../../assets/logo/BrainFlix-logo.svg";
+import avatar from "../../assets/images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <>
       <header className="header">
-        <img
-          src={logo}
-          alt="brainflix logo"
-          className="header__logo"
-        />
+        <Link to="/">
+          <img src={logo} alt="brainflix logo" className="header__logo" />
+        </Link>
 
         <div className="header__content">
           <input
@@ -25,7 +24,11 @@ function Header() {
             alt="user avatar image"
             className="header__avatar"
           />
-          <button className="header__button">UPLOAD</button>
+          <Link to='/upload' className="header__link">
+            {/* <button className="header__button">UPLOAD</button> */}
+            UPLOAD
+          </Link>
+
         </div>
       </header>
     </>
@@ -33,3 +36,4 @@ function Header() {
 }
 
 export default Header;
+ 
