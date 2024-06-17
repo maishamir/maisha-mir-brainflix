@@ -24,10 +24,12 @@ function Header() {
             alt="user avatar image"
             className="header__avatar"
           />
-          <Link to='/upload' className="header__link">
-            {/* <button className="header__button">UPLOAD</button> */}
+          <Link to='/upload' className="header__button button-link">
             UPLOAD
           </Link>
+
+
+
 
         </div>
       </header>
