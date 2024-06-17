@@ -15,21 +15,29 @@ function UploadPage() {
     const title = titleRef.current.value;
 
     const desc = descRef.current.value;
-    console.log(title, desc)
+
+    let hasError = false;
     
-    if (!title || !desc) {
-      if (!title) {
+
+      if (title === "" || title === "undefined") {
         titleRef.current.classList.add("upload-page__error");
-        titleRef.current.focus()
+        hasError = true
       }
+      else {
+        titleRef.current.classList.remove("upload-page__error")
+      }
+
       if (!desc) {
         descRef.current.classList.add("upload-page__error");
-        if (title) {
-          descRef.current.focus();
-        }
+        hasError = true;
+      } else {
+        descRef.current.classList.remove("upload-page__error")
+
       }
+    
+      if (hasError)
       return
-    }
+
 
 
     setButtonText("UPLOADING");
