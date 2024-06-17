@@ -1,77 +1,109 @@
-@import '../../styles/partials/globals';
-@import '../../styles/partials/mixins';
-@import '../../styles/partials/variables';
+@import "../../styles/partials/globals";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
 
 .upload-page {
+  border-top: 1px solid $mercury;
+  padding: 1rem;
 
-    border-top: 1px solid $mercury;
-    padding: 1rem;
+  @include tablet {
+    padding: 1.5rem;
+  }
+
+  @include desktop {
+    padding: 2rem 10rem;
+  }
+
+  &__container {
+    @include desktop {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__video {
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__form-container {
+    @include desktop {
+      width: 80%;
+    }
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    color: $brainflix-black;
 
     @include tablet {
-        padding: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__divider {
+    margin: 0 0 1.5rem 0;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+  &__thumbnail {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 50%;
     }
 
-    &__title {
-        padding-bottom: 1rem;
-        color: $brainflix-black;
-
-        @include tablet {
-            padding-bottom: 1.5rem;
-        }
+    @include desktop {
+      width: 90%;
     }
+  }
 
-    &__divider {
-        margin: 0 0 1.5rem 0;
-        display: none;
+  &__label {
+    color: $silver;
+  }
 
-        @include tablet {
-            display: block;
-        }
+  &__vid-title {
+    margin-bottom: 1rem;
+  }
+
+  &__vid-desc {
+    margin-bottom: 1rem;
+
+    @include desktop {
+        height: 7.5rem;
     }
-    &__thumbnail {
-        width: 100%;
-        margin-bottom: 1rem;
+  }
 
-        @include tablet {
-            width: 50%;
-        }
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    @include tablet {
+      flex-direction: row-reverse;
+      gap: 3rem;
     }
+  }
 
-    
+  &__publish {
+    background-image: url(../../assets/icons/publish.svg);
+    padding: 0 4rem;
+  }
 
-    &__label {
-        color: $silver;
-    }
+  &__cancel {
+    text-decoration: none;
+    color: $brainflix-blue;
+    font-weight: 600;
+    font-size: 0.625rem;
+  }
 
-    &__vid-title {
-        margin-bottom: 1rem;
-    }
-
-    &__vid-desc {
-        margin-bottom: 1rem;
-    }
-
-    &__button-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-
-        @include tablet {
-            flex-direction: row-reverse;
-            gap: 3rem;
-        }
-    }
-
-    &__publish {
-        background-image: url(../../assets/icons/publish.svg);
-    }
-
-    &__cancel {
-        text-decoration: none;
-        color: $brainflix-blue;
-        font-weight: 600;
-        font-size: 0.625rem;
-    }
-
+  &__error {
+    border: 1px solid #d22d2d;
+  }
 }

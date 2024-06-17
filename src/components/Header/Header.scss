@@ -15,6 +15,10 @@
     padding: 1.5rem;
   }
 
+  @include desktop {
+    padding: 1.5rem 10rem;
+  }
+
   &__content {
     width: 100%;
     display: flex;
@@ -69,7 +73,7 @@
 
   &__button {
     background-image: url(../../assets/icons/upload.svg);
-
+    padding: 0 4rem;
    
   }
 }
