@@ -95,7 +95,7 @@ textarea {
 }
 
 input[type="text"] {
-  @extend textarea;
+@extend textarea;
   height: 2.25rem;
 }
 

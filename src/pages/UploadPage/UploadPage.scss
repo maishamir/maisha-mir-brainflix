@@ -6,15 +6,38 @@
 
     border-top: 1px solid $mercury;
     padding: 1rem;
-    &__thumbnail {
-        width: 100%;
-        margin-bottom: 1rem;
+
+    @include tablet {
+        padding: 1.5rem;
     }
 
     &__title {
         padding-bottom: 1rem;
         color: $brainflix-black;
+
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
     }
+
+    &__divider {
+        margin: 0 0 1.5rem 0;
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+    &__thumbnail {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            width: 50%;
+        }
+    }
+
+    
 
     &__label {
         color: $silver;
@@ -33,6 +56,11 @@
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            gap: 3rem;
+        }
     }
 
     &__publish {
