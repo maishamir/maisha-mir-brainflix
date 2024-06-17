@@ -4,49 +4,60 @@ import "./UploadPage.scss";
 import { Link, Navigate } from "react-router-dom";
 
 function UploadPage() {
+  const [redirect, setRedirect] = useState(false);
 
-    const [redirect, setRedirect] = useState(false)
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        const form = e.target;
-        const { videoTitle, videoDesc } = form;
-        console.log("Title: ", videoTitle.value)
-        console.log("Description: ", videoDesc.value)
+    alert("Uploaded successfully!");
+    form.reset();
 
-        alert("Uploaded successfully!")
-        form.reset()
+    setRedirect(true);
+  }
 
-        setRedirect(true)
-    }
-
-    if (redirect) {
-        return <Navigate to = "/"/>
-    }
+  if (redirect) {
+    return <Navigate to="/" />;
+  }
   return (
     <main className="upload-page">
-      <h1>Upload Video</h1>
+      <h1 className="upload-page__title">Upload Video</h1>
 
-      <h2>VIDEO THUMBNAIL</h2>
-      <img src={image} alt="" className="uploadpage__thumbnail" />
+      <h2 className="upload-page__label">VIDEO THUMBNAIL</h2>
+      <img src={image} alt="" className="upload-page__thumbnail" />
 
       <form className="upload-page__form" onSubmit={handleSubmit}>
         <div className="upload-page__input">
-          <label htmlFor="videoTitle" className="upload-page__label">
+          <label htmlFor="videoTitle" className="upload-page__form-label">
             TITLE YOUR VIDEO
-          </label>{" "}
+          </label>
           <br />
           <input
+            className="upload-page__vid-title"
             type="text"
             name="videoTitle"
             id="videoTitle"
             placeholder="Add a title to your video"
           />
         </div>
-        <div class="upload-page__input">
-          <textarea name="videoDesc" id="videoDesc" class="upload-page__description" placeholder="Add a description to your video"/>
+        <div className="upload-page__input">
+          <label htmlFor="videoDesc">ADD A VIDEO DESCRIPTION</label>
+          <br />
+          <textarea
+            name="videoDesc"
+            id="videoDesc"
+            className="upload-page__vid-desc"
+            placeholder="Add a description to your video"
+          />
         </div>
-        <button type="submit">Publish</button>
+        <div className="upload-page__button-container">
+          <Link to="/" className="upload-page__publish button-link" >PUBLISH</Link>
+          <Link to="/" className="upload-page__cancel">
+            CANCEL
+          </Link>
+        </div>
+
+
       </form>
     </main>
   );

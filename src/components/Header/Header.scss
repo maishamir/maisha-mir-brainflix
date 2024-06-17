@@ -44,23 +44,21 @@
       order: 1;
     }
   }
-  &__search-bar {
-    height: 2.25rem;
-    width: 100%;
+  #search {
     flex-basis: 33%;
     background: url(../../assets/icons/search.svg) no-repeat scroll 0.5rem
-      0.5rem;
-    padding: 0.75rem 0.75rem 0.75rem 2.75rem;
+      0.5rem $alabaster;
+    padding-left: 2.75rem;
     flex-grow: 1;
 
     @include tablet {
-        flex-grow: 0;
-        width: 1px;
+      flex-grow: 0;
+      width: 1px;
     }
 
     @include desktop {
-        flex-grow: 0;
-        width: 10px;
+      flex-grow: 0;
+      width: 10px;
     }
 
     &::placeholder {
@@ -68,22 +66,10 @@
     }
   }
 
-  &__link {
-    display: block;
-    border: 1px dashed green;
-  }
 
   &__button {
-    width: 100%;
-    background: url(../../assets/icons/upload.svg) no-repeat scroll 0.5rem 0.5rem;
-    background-color: $brainflix-blue;
+    background-image: url(../../assets/icons/upload.svg);
 
-    @include tablet {
-        width: 20%;
-    }
-
-    @include desktop {
-        width: 10%;
-    }
+   
   }
 }

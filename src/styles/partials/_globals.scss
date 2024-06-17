@@ -43,25 +43,39 @@ h2 {
 }
 
 button {
-  height: 2.5rem;
-  border-radius: 4px;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-position-x: 0.45rem;
+  background-color: $brainflix-blue;
+  height: 2.25rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   border: none;
   color: white;
+  border-radius: 4px;
   font-size: 0.625rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
 
   @include tablet {
     font-size: 0.75rem;
+    width: 20%;
+  }
+
+  @include desktop {
+    width: 10%;
   }
   &:hover {
-    background: $brainflix-darkblue;
+    background-color: $brainflix-darkblue;
+    cursor: pointer;
   }
 }
 
-a .button {
-  
+.button-link {
+  @extend button;
+  text-decoration: none;
 }
 
 label {
@@ -70,15 +84,19 @@ label {
   line-height: 1.25rem;
   color: $silver;
 }
-
-input[type="text"] {
+textarea {
   background-color: $alabaster;
   border: 1px solid $mercury;
   border-radius: 4px;
-}
-textarea {
-  @extend input;
+  width: 100%;
+  height: 5rem;
   resize: none;
+  padding: 0.75rem;
+}
+
+input[type="text"] {
+  @extend textarea;
+  height: 2.25rem;
 }
 
 hr {
@@ -86,11 +104,11 @@ hr {
   border-top: 1px solid $mercury;
   margin: 0 1rem;
 
-    @include tablet {
-        margin: 0 1.5rem;
-    }
+  @include tablet {
+    margin: 0 1.5rem;
+  }
 
-    @include desktop {
-      margin: 0;
-    }
+  @include desktop {
+    margin: 0;
+  }
 }

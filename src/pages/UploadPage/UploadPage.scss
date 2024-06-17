@@ -1,3 +1,49 @@
 @import '../../styles/partials/globals';
 @import '../../styles/partials/mixins';
-@import '../../styles/partials/variables'
+@import '../../styles/partials/variables';
+
+.upload-page {
+
+    border-top: 1px solid $mercury;
+    padding: 1rem;
+    &__thumbnail {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        padding-bottom: 1rem;
+        color: $brainflix-black;
+    }
+
+    &__label {
+        color: $silver;
+    }
+
+    &__vid-title {
+        margin-bottom: 1rem;
+    }
+
+    &__vid-desc {
+        margin-bottom: 1rem;
+    }
+
+    &__button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__publish {
+        background-image: url(../../assets/icons/upload.svg);
+    }
+
+    &__cancel {
+        text-decoration: none;
+        color: $brainflix-blue;
+        font-weight: 600;
+        font-size: 0.625rem;
+    }
+
+}
