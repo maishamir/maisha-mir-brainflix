@@ -34,7 +34,7 @@ function UploadPage() {
         <div className="upload-page__input">
           <label htmlFor="videoTitle" className="upload-page__label">
             TITLE YOUR VIDEO
-          </label>{" "}
+          </label>
           <br />
           <input
             type="text"
