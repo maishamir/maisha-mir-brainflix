@@ -1,7 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import VideoSection from "../../components/VideoSection/VideoSection.jsx";
 import API_URL, { API_KEY } from "../../utils.js";
+import VideoInfo from "../../components/VideoInfo/VideoInfo.jsx";
+import VideoDescription from "../../components/VideoDescription/VideoDescription.jsx";
+import CommentSection from "../../components/CommentSection/CommentSection.jsx";
+import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 import MainSection from "../../components/MainSection/MainSection.jsx";
 
 function VideoDetailsPage() {

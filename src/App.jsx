@@ -1,4 +1,4 @@
-
+import "./App.scss";
 import Header from "./components/Header/Header";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
