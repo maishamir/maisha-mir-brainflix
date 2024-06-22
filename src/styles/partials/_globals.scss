@@ -84,6 +84,7 @@ label {
   line-height: 1.25rem;
   color: $silver;
 }
+
 textarea {
   background-color: $alabaster;
   border: 1px solid $mercury;
@@ -96,11 +97,12 @@ textarea {
 }
 
 input[type="text"] {
-@extend textarea;
+  @extend textarea;
   height: 2.25rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border: 1px solid $brainflix-blue;
 }

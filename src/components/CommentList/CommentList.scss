@@ -4,10 +4,9 @@
 .comment-list {
   hr {
     @include desktop {
-        &:last-of-type {
-            display: none;
+      &:last-of-type {
+        display: none;
+      }
     }
-    }
-    
   }
 }

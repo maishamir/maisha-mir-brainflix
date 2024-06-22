@@ -64,9 +64,9 @@ function VideoDetailsPage() {
   const { title, channel, image, description, comments } = videoDetailsData;
 
   return (
-    <div className="video-detailsPage">
+
       <MainSection currentVideo={videoDetailsData} videos={videoList } />
-    </div>
+
   );
 }
 

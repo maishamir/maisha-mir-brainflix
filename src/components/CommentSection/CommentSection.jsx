@@ -1,4 +1,3 @@
-import "./CommentSection.scss";
 import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
 
