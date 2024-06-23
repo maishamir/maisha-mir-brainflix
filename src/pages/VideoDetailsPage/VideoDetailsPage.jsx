@@ -9,28 +9,38 @@ function VideoDetailsPage() {
   const [videoDetailsData, setVideoDetailsData] = useState(null); // State to store the details of the current video
   const [videoList, setVideolist] = useState([]); // State to store the list of other videos for the sidebar
 
+  const fetchAllVideos = async () => {
+    const { data } = await axios.get(`${API_URL}videos${API_KEY}`);
+    return data;
+  };
+
+  const fetchVideoDetails = async (id) => {
+    const { data } = await axios.get(`${API_URL}videos/${id}${API_KEY}`);
+    return data;
+  };
+
   useEffect(() => {
-    const fetchVideoData = async () => {
+    const fetchData = async () => {
       try {
-        let sidebarVideos = [];
-        const allVids = await axios.get(`${API_URL}videos`);
-        if (videoId) {
-          const { data } = await axios.get(`${API_URL}videos/${videoId}`);
-          setVideoDetailsData(data);
-          sidebarVideos = allVids.data.filter((video) => video.id !== videoId);
-        } else {
-          const id = allVids.data[0].id;
-          const { data } = await axios.get(`${API_URL}videos/${id}`);
-          setVideoDetailsData(data);
-          sidebarVideos = allVids.data.filter((video) => video.id !== id);
+        const allVids = await fetchAllVideos();
+        if (allVids.length === 0) {
+          console.error("Videos are unavailable at the moment");
+          return;
         }
+        let currentVideoId = videoId || allVids[0].id;
+        const currentVideoDetails = await fetchVideoDetails(currentVideoId);
+
+        setVideoDetailsData(currentVideoDetails);
+        const sidebarVideos = allVids.filter(
+          (video) => video.id !== currentVideoId
+        );
         setVideolist(sidebarVideos);
       } catch (e) {
         console.error("Error fetching api data: ", e);
       }
     };
-    fetchVideoData();
-  }, []);
+    fetchData();
+  }, [videoId]);
 
   // If video details or video list are not yet loaded, display a loading message
   if (!videoDetailsData || videoList.length === 0) {
