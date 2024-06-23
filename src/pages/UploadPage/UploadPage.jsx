@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
-import image from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
+const API_URL = import.meta.env.VITE_API_URL;
 import { Link, Navigate } from "react-router-dom";
 
 function UploadPage() {
@@ -17,27 +17,24 @@ function UploadPage() {
     const desc = descRef.current.value;
 
     let hasError = false;
+
+    if (title === "" || title === "undefined") {
+      titleRef.current.classList.add("upload-page__error");
+      hasError = true;
+    } else {
+      titleRef.current.classList.remove("upload-page__error");
+    }
+
+    if (!desc) {
+      descRef.current.classList.add("upload-page__error");
+      hasError = true;
+    } else {
+      descRef.current.classList.remove("upload-page__error");
+    }
+
+    if (hasError) return;
+
     
-
-      if (title === "" || title === "undefined") {
-        titleRef.current.classList.add("upload-page__error");
-        hasError = true
-      }
-      else {
-        titleRef.current.classList.remove("upload-page__error")
-      }
-
-      if (!desc) {
-        descRef.current.classList.add("upload-page__error");
-        hasError = true;
-      } else {
-        descRef.current.classList.remove("upload-page__error")
-
-      }
-    
-      if (hasError)
-      return
-
 
 
     setButtonText("UPLOADING");
@@ -62,7 +59,11 @@ function UploadPage() {
       <div className="upload-page__container">
         <div className="upload-page__video">
           <h2 className="upload-page__label">VIDEO THUMBNAIL</h2>
-          <img src={image} alt="" className="upload-page__thumbnail" />
+          <img
+            src={`${API_URL}images/image9.jpg`}
+            alt=""
+            className="upload-page__thumbnail"
+          />
         </div>
 
         <div className="upload-page__form-container">
@@ -85,7 +86,7 @@ function UploadPage() {
               <label htmlFor="videoDesc">ADD A VIDEO DESCRIPTION</label>
               <br />
               <textarea
-                ref = {descRef}
+                ref={descRef}
                 name="videoDesc"
                 id="videoDesc"
                 className="upload-page__vid-desc"
