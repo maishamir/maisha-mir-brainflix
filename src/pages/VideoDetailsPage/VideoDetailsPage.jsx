@@ -9,25 +9,37 @@ function VideoDetailsPage() {
   const [videoDetailsData, setVideoDetailsData] = useState(null); // State to store the details of the current video
   const [videoList, setVideolist] = useState([]); // State to store the list of other videos for the sidebar
 
+  const fetchAllVideos = async () => {
+    const { data } = await axios.get(`${API_URL}videos${API_KEY}`);
+    return data;
+  };
+
+  const fetchVideoDetails = async (id) => {
+    const { data } = await axios.get(`${API_URL}videos/${id}${API_KEY}`);
+    return data;
+  };
+
   useEffect(() => {
-    const fetchVideoData = async () => {
+    const fetchData = async () => {
       try {
-        const allVids = await axios.get(`${API_URL}videos${API_KEY}`);
-        if (videoId) {
-          const {data} = await axios.get(`${API_URL}videos/${videoId}${API_KEY}`);
-          setVideoDetailsData(data)
-        } else {
-          const id = allVids.data[0].id;
-          const {data} = await axios.get(`${API_URL}videos/${id}${API_KEY}`);
-          setVideoDetailsData(data)
+        const allVids = await fetchAllVideos();
+        if (allVids.length === 0) {
+          console.error("Videos are unavailable at the moment");
+          return;
         }
-        const sidebarVideos = allVids.data.filter(video => video.id !== videoId)
-        setVideolist(sidebarVideos)
+        let currentVideoId = videoId || allVids[0].id;
+        const currentVideoDetails = await fetchVideoDetails(currentVideoId);
+
+        setVideoDetailsData(currentVideoDetails);
+        const sidebarVideos = allVids.filter(
+          (video) => video.id !== currentVideoId
+        );
+        setVideolist(sidebarVideos);
       } catch (e) {
-        console.log(e);
+        console.error(e);
       }
-    }
-    fetchVideoData()
+    };
+    fetchData();
   }, [videoId]);
 
   // If video details or video list are not yet loaded, display a loading message
@@ -38,4 +50,4 @@ function VideoDetailsPage() {
   return <MainSection currentVideo={videoDetailsData} videos={videoList} />;
 }
 
-export default VideoDetailsPage
+export default VideoDetailsPage;
