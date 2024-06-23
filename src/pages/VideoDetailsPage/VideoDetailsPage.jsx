@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-const API_URL = import.meta.env.VITE_API_URL; 
+const API_URL = import.meta.env.VITE_API_URL;
 import MainSection from "../../components/MainSection/MainSection.jsx";
 
 function VideoDetailsPage() {
@@ -12,23 +12,25 @@ function VideoDetailsPage() {
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
+        let sidebarVideos = [];
         const allVids = await axios.get(`${API_URL}videos`);
         if (videoId) {
-          const {data} = await axios.get(`${API_URL}videos/${videoId}`);
-          setVideoDetailsData(data)
+          const { data } = await axios.get(`${API_URL}videos/${videoId}`);
+          setVideoDetailsData(data);
+          sidebarVideos = allVids.data.filter((video) => video.id !== videoId);
         } else {
           const id = allVids.data[0].id;
-          const {data} = await axios.get(`${API_URL}videos/${id}`);
-          setVideoDetailsData(data)
+          const { data } = await axios.get(`${API_URL}videos/${id}`);
+          setVideoDetailsData(data);
+          sidebarVideos = allVids.data.filter((video) => video.id !== id);
         }
-        const sidebarVideos = allVids.data.filter(video => video.id !== videoId)
-        setVideolist(sidebarVideos)
+        setVideolist(sidebarVideos);
       } catch (e) {
-        console.log(e);
+        console.error("Error fetching api data: ", e);
       }
-    }
-    fetchVideoData()
-  }, [videoId]);
+    };
+    fetchVideoData();
+  }, []);
 
   // If video details or video list are not yet loaded, display a loading message
   if (!videoDetailsData || videoList.length === 0) {
@@ -38,4 +40,4 @@ function VideoDetailsPage() {
   return <MainSection currentVideo={videoDetailsData} videos={videoList} />;
 }
 
-export default VideoDetailsPage
+export default VideoDetailsPage;
