@@ -3,7 +3,6 @@
 @import "../../styles/partials/variables";
 
 .main-section {
-
   @include desktop {
     display: flex;
     flex-direction: column;
@@ -13,6 +12,16 @@
     @include desktop {
       padding: 0rem 0rem 0rem 8rem;
       display: flex;
+    }
+  }
+
+  &__comment-list {
+    hr {
+      @include desktop {
+        &:last-of-type {
+          display: none;
+        }
+      }
     }
   }
 }
