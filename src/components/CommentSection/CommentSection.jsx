@@ -1,11 +1,16 @@
 import CommentForm from "../CommentForm/CommentForm";
-import CommentList from "../CommentList/CommentList";
+import Comment from "../Comment/Comment";
+import '../CommentSection/CommentSection.scss'
 
 function CommentSection({ comments }) {
   return (
     <>
       <CommentForm comments={ comments} />
-      <CommentList comments={comments } />
+      <div className="comment-list">
+        {comments.map((comment) => {
+          return <Comment commentObj={comment} key={comment.id} />
+        })}
+      </div>
     </>
   );
 }
