@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import API_URL, { API_KEY } from "../../utils.js";
+const API_URL = import.meta.env.VITE_API_URL; 
 import MainSection from "../../components/MainSection/MainSection.jsx";
 
 function VideoDetailsPage() {
