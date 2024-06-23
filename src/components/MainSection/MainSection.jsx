@@ -7,6 +7,8 @@ import CommentForm from "../CommentForm/CommentForm";
 import Video from "../Video/Video";
 
 function MainSection({ currentVideo, videos, changeVideo }) {
+
+  console.log("CURRENT VIDEO => ", currentVideo)
   return (
     <main className="main-section">
       <div className="main-section__video">

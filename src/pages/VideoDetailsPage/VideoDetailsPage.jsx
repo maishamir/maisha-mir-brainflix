@@ -10,12 +10,12 @@ function VideoDetailsPage() {
   const [videoList, setVideolist] = useState([]); // State to store the list of other videos for the sidebar
 
   const fetchAllVideos = async () => {
-    const { data } = await axios.get(`${API_URL}videos${API_KEY}`);
+    const { data } = await axios.get(`${API_URL}videos`);
     return data;
   };
 
   const fetchVideoDetails = async (id) => {
-    const { data } = await axios.get(`${API_URL}videos/${id}${API_KEY}`);
+    const { data } = await axios.get(`${API_URL}videos/${id}`);
     return data;
   };
 
