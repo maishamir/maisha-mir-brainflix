@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import API_URL, { API_KEY } from "../../utils.js";
+const API_URL = import.meta.env.VITE_API_URL; 
 import MainSection from "../../components/MainSection/MainSection.jsx";
 
 function VideoDetailsPage() {
@@ -12,13 +12,13 @@ function VideoDetailsPage() {
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
-        const allVids = await axios.get(`${API_URL}videos${API_KEY}`);
+        const allVids = await axios.get(`${API_URL}videos`);
         if (videoId) {
-          const {data} = await axios.get(`${API_URL}videos/${videoId}${API_KEY}`);
+          const {data} = await axios.get(`${API_URL}videos/${videoId}`);
           setVideoDetailsData(data)
         } else {
           const id = allVids.data[0].id;
-          const {data} = await axios.get(`${API_URL}videos/${id}${API_KEY}`);
+          const {data} = await axios.get(`${API_URL}videos/${id}`);
           setVideoDetailsData(data)
         }
         const sidebarVideos = allVids.data.filter(video => video.id !== videoId)
