@@ -10,6 +10,7 @@
     @include tablet {
         margin: 1.2rem 0;
     }
+
     &__thumbnail {
         height: 3.8rem;
         border-radius: 4px;
@@ -17,8 +18,8 @@
         @include tablet {
             height: 5rem;
         }
-
     }
+
     &__title {
         font-weight: 600;
     }

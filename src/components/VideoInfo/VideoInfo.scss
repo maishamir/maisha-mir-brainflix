@@ -4,6 +4,7 @@
 
 .video-info {
     padding: 1rem;
+
     @include tablet {
         padding: 1.5rem;
     }
@@ -50,11 +51,11 @@
             padding: 0 1rem;
         }
     }
+
     &__channel {
         color: $brainflix-black;
         font-weight: 600;
     }
-
 
     hr {
         margin: 0;

@@ -1,47 +1,50 @@
-import { useState, useRef } from "react";
-import image from "../../assets/images/Upload-video-preview.jpg";
+import { useState } from "react";
 import "./UploadPage.scss";
+const API_URL = import.meta.env.VITE_API_URL;
+import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
 
 function UploadPage() {
   const [redirect, setRedirect] = useState(false);
   const [buttonText, setButtonText] = useState("PUBLISH");
-  const formRef = useRef();
-  const titleRef = useRef();
-  const descRef = useRef();
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [titleError, setTitleError] = useState(false);
+  const [descError, setDescError] = useState(false);
 
-  function handleSubmit() {
-    const form = formRef.current;
-    const title = titleRef.current.value;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const desc = descRef.current.value;
-
+    // check for errors
     let hasError = false;
-    
+    if (title.trim() === "") {
+      setTitleError(true);
+      hasError = true;
+    } else {
+      setTitleError(false);
+    }
+    if (desc.trim() === "") {
+      setDescError(true);
+      hasError = true;
+    } else {
+      setDescError(false);
+    }
 
-      if (title === "" || title === "undefined") {
-        titleRef.current.classList.add("upload-page__error");
-        hasError = true
-      }
-      else {
-        titleRef.current.classList.remove("upload-page__error")
-      }
+    if (hasError) {
+      return;
+    }
 
-      if (!desc) {
-        descRef.current.classList.add("upload-page__error");
-        hasError = true;
-      } else {
-        descRef.current.classList.remove("upload-page__error")
-
-      }
-    
-      if (hasError)
-      return
-
-
+    // todo: if no errors, get the title and description values and make post request
+    try {
+      await axios.post(`${API_URL}videos`, {
+        title: title,
+        description: desc,
+      });
+    } catch (error) {
+      console.error("Couldn't make post request", error)
+    }
 
     setButtonText("UPLOADING");
-    form.reset();
 
     setTimeout(() => {
       setButtonText("POSTED");
@@ -49,7 +52,7 @@ function UploadPage() {
         setRedirect(true);
       }, 1000);
     }, 2000);
-  }
+  };
 
   if (redirect) {
     return <Navigate to="/" />;
@@ -62,19 +65,26 @@ function UploadPage() {
       <div className="upload-page__container">
         <div className="upload-page__video">
           <h2 className="upload-page__label">VIDEO THUMBNAIL</h2>
-          <img src={image} alt="" className="upload-page__thumbnail" />
+          <img
+            src={`${API_URL}images/placeholder.jpg`}
+            alt=""
+            className="upload-page__thumbnail"
+          />
         </div>
 
         <div className="upload-page__form-container">
-          <form className="upload-page__form" ref={formRef}>
+          <form className="upload-page__form" onSubmit={handleSubmit}>
             <div className="upload-page__input">
               <label htmlFor="videoTitle" className="upload-page__form-label">
                 TITLE YOUR VIDEO
               </label>
               <br />
               <input
-                ref={titleRef}
-                className="upload-page__vid-title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className={`upload-page__vid-title ${
+                  titleError ? "upload-page__error" : ""
+                }`}
                 type="text"
                 name="videoTitle"
                 id="videoTitle"
@@ -85,10 +95,13 @@ function UploadPage() {
               <label htmlFor="videoDesc">ADD A VIDEO DESCRIPTION</label>
               <br />
               <textarea
-                ref = {descRef}
+                value={desc}
+                onChange={(e) => setDesc(e.target.value)}
                 name="videoDesc"
                 id="videoDesc"
-                className="upload-page__vid-desc"
+                className={`upload-page__vid-desc ${
+                  descError ? "upload-page__error" : ""
+                }`}
                 placeholder="Add a description to your video"
               />
             </div>

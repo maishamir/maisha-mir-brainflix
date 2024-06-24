@@ -1,4 +1,6 @@
 import "./VideoInfo.scss";
+import likeIcon from "../../assets/icons/likes.svg"; 
+import viewIcon from "../../assets/icons/views.svg"; 
 
 function VideoInfo({ currentVideo }) {
   return (
@@ -12,8 +14,8 @@ function VideoInfo({ currentVideo }) {
         <p className="video-info__date">{new Date(currentVideo.timestamp).toLocaleDateString()}</p>
       </div>
       <div className="video-info__stats">
-        <p className="video-info__views"><img src="src/assets/icons/views.svg" alt="" className="video-info__logo"/> {currentVideo.views}</p>
-        <p className="video-info__likes"><img src="src/assets/icons/likes.svg" alt="" className="video-info__logo"/> {currentVideo.likes}</p>
+          <p className="video-info__views"><img src={viewIcon}  alt="" className="video-info__logo"/> {currentVideo.views}</p>
+        <p className="video-info__likes"><img src={likeIcon} alt="" className="video-info__logo"/> {currentVideo.likes}</p>
       </div>
       </div>
       

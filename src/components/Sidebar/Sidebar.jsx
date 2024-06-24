@@ -1,7 +1,4 @@
 import "./Sidebar.scss";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import API_URL, { API_KEY } from "../../utils.js";
 
 import VideoItem from "../VideoItem/VideoItem";
 import { Link} from "react-router-dom";
