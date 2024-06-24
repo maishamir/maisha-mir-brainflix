@@ -8,6 +8,10 @@
     flex-direction: column;
   }
 
+  &__video-info {
+    width: 100%;
+  }
+
   &__vid-sidebar {
     @include desktop {
       padding: 0rem 0rem 0rem 8rem;
