@@ -66,7 +66,7 @@ function UploadPage() {
         <div className="upload-page__video">
           <h2 className="upload-page__label">VIDEO THUMBNAIL</h2>
           <img
-            src={`${API_URL}images/image9.jpg`}
+            src={`${API_URL}images/placeholder.jpg`}
             alt=""
             className="upload-page__thumbnail"
           />
